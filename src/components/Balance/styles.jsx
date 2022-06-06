@@ -10,9 +10,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         elevation: 1,
         shadowColor: "#000000",
-        marginTop: 14,
-        marginLeft: 14,
-        marginRight: 14,
+        margin: 14,
         paddingBottom: 30,
     },
     line: {
@@ -22,10 +20,10 @@ const styles = StyleSheet.create({
         backgroundColor: "#D7DCE4"
     },
     sectionTitle: {
-        fontFamily: "Nunito_700Bold",
+        fontFamily: "Nunito_600SemiBold",
+        fontSize: 16,
         marginTop: 24,
         color: "#667898",
-        fontSize: 18,
     },
     money: {
         marginTop: 17,

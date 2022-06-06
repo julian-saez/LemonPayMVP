@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
@@ -56,13 +56,15 @@ const styles = StyleSheet.create({
         alignItems: "flex-end"
     },
     amount: {
-        fontSize: 17,
+        fontSize: 12,
         fontFamily: "Nunito_700Bold",
+        color: "#44D727"
     },
     exchange: {
         color: "#5F6F8D",
         fontFamily: "Nunito_500Medium",
     },
+
 })
 
 export default styles;

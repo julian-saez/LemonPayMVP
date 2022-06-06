@@ -1,12 +1,10 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         margin: 14,
-        backgroundColor: "#ffffff",
+        backgroundColor: 'rgba(255,255,255,0.1)',
         borderRadius: 25,
-        elevation: 1,
-        shadowColor: "#000000",
     },
     item: {
         fontSize: 20,
@@ -21,9 +19,9 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 17,
-        color: "#667898",
+        color: "#F2F2F2",
         fontWeight: "500",
-        marginTop: 20,
+        marginTop: 25,
         marginLeft: 20,
         marginBottom: 20
     },
@@ -43,12 +41,12 @@ const styles = StyleSheet.create({
         borderRadius: 100
     },
     typeCoinAbr: {
-        color: "#171A23",
+        color: "#F2F2F2",
         fontSize: 17,
         fontFamily: "Nunito_700Bold",
     },
     typeCoin: {
-        color: "#5F6F8D",
+        color: "#E0E0E0",
         fontSize: 15,
         fontFamily: "Nunito_500Medium",
     },
@@ -56,13 +54,15 @@ const styles = StyleSheet.create({
         alignItems: "flex-end"
     },
     amount: {
-        fontSize: 17,
+        fontSize: 12,
         fontFamily: "Nunito_700Bold",
+        color: "#F2F2F2"
     },
     exchange: {
-        color: "#5F6F8D",
+        color: "#E0E0E0",
         fontFamily: "Nunito_500Medium",
     },
+
 })
 
 export default styles;

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { View, Text, Image, FlatList, SafeAreaView, StyleSheet } from 'react-native';
 import Styles from './styles.jsx';
 import Data from '../../api/data.js';
@@ -38,7 +37,7 @@ const Item = ({ obj, marketValue }) => (
     </View>
 );
 
-const OwnCoins = ({ cryptocurrency }) => {
+const NewOwnCoins = ({ cryptocurrency }) => {
     const COINS = Data[0].coins;
     return(
         <SafeAreaView style={Styles.container}>
@@ -54,4 +53,4 @@ const OwnCoins = ({ cryptocurrency }) => {
     )
 };
 
-export default OwnCoins;
+export default NewOwnCoins;
