@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import { View, Text, TouchableHighlight, Image } from 'react-native';
 import Styles from './styles.jsx';
+import { walletContext } from '../../../contexts/Context.js';
 
-const NewBalance = ({walletValue}) => {
+const NewBalance = () => {
+    const { wallet } = useContext(walletContext)
     return(
         <View style={Styles.container}>
             <View>
@@ -13,7 +15,7 @@ const NewBalance = ({walletValue}) => {
                     </View>
                 </TouchableHighlight>
             </View>
-            <Text style={Styles.money}>{walletValue}
+            <Text style={Styles.money}>{wallet.walletValue ? wallet.walletValue.toFixed(2) : 0}
             <Text style={Styles.badgeText}> ARS</Text> 
             </Text>
             <View style={Styles.balanceButtonsContainer}>

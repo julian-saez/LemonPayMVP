@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { SafeAreaView, ScrollView } from 'react-native';
+import { View, StatusBar, ScrollView } from 'react-native';
 import Styles from './styles.jsx';
 import Header from '../../src/components/header/Header';
 import Balance from "../../src/components/balance/Balance";
 import OwnCoins from "../../src/components/ownCoins/OwnCoins";
 import Movements from "../../src/components/movements/Movements";
 
-const Home = ({walletValue, cryptocurrency}) => {
+const Home = ({navigation}) => {
     return (
-        <SafeAreaView>
+        <ScrollView>
             <StatusBar 
                 animated={true}
                 backgroundColor="#031F33"
-                hidden={false}
             />
-            <ScrollView style={Styles.container}>
-                <Header />
-                <Balance walletValue={walletValue} />
-                <OwnCoins cryptocurrency={cryptocurrency} />
+            <View style={Styles.container}>
+                <Header navigation={navigation} />
+                <Balance />
+                <OwnCoins />
                 <Movements />
-            </ScrollView>
-        </SafeAreaView>
+            </View>
+        </ScrollView>
     )
 };
 

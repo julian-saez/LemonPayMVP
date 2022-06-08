@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image, FlatList, SafeAreaView, StyleSheet } from 'react-native';
+import React, { useContext } from "react";
+import { View, Text, Image } from 'react-native';
 import Styles from './styles.jsx';
 import Data from '../../api/data.js';
+import { walletContext } from "../../../contexts/Context";
 
 const pesification = (amount, marketValue) => marketValue * 200 * amount;
 
@@ -28,7 +29,7 @@ const Amount = ({amount, abr, marketValue}) => {
     )
 }
 
-const Item = ({ obj, marketValue }) => (
+const CoinComponent = ({ obj, marketValue }) => (
     <View style={Styles.item}>
         <View style={Styles.typeCoinContainer}>
             <CoinIcon iconImg={obj.iconImg} />
@@ -38,19 +39,16 @@ const Item = ({ obj, marketValue }) => (
     </View>
 );
 
-const OwnCoins = ({ cryptocurrency }) => {
-    const COINS = Data[0].coins;
+const OwnCoins = () => {
+    const coins = Data[0].coins;
+    const { wallet } = useContext(walletContext);
     return(
-        <SafeAreaView style={Styles.container}>
+        <View style={Styles.container}>
             <Text style={Styles.title}>Tus monedas</Text>
-            <FlatList
-                data={COINS}
-                renderItem={({item}) => (
-                    <Item obj={item} marketValue={item.abr === "BTC" ? cryptocurrency[0] : cryptocurrency[1]}  />
-                )}
-                keyExtractor={item => item.id}  
-            />
-        </SafeAreaView>
+            {
+                coins.map(el => wallet.values ? <CoinComponent key={el.id} obj={el} marketValue={el.abr === "BTC" ? wallet.values[0].bitcoin : wallet.values[1].ethereum}  /> : null)
+            }
+        </View>
     )
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, SafeAreaView, FlatList, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Styles from './styles.jsx';
 import Data from '../../api/data.js';
 
@@ -38,18 +38,14 @@ const Item = ({ obj }) => {
 }
 
 const Movements = () => {
-    const MOVEMENTS = Data[0].movements;
+    const movements = Data[0].movements;
     return (
-        <SafeAreaView style={Styles.container}>
+        <View style={Styles.container}>
             <Text style={Styles.title}>Últimos movimientos</Text>
-            <FlatList 
-                data={MOVEMENTS}
-                renderItem={({ item }) => (
-                    <Item obj={item} />
-                )}
-                keyExtractor={item => item.id}
-            />
-        </SafeAreaView>
+            {
+                movements.map(arr => <Item key={arr.id} obj={arr} />)
+            }
+        </View>
     )
 }
 

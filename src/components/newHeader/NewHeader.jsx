@@ -3,14 +3,16 @@ import { Image, Text, View, TouchableHighlight } from 'react-native';
 import Data from '../../api/data.js';
 import Styles from './styles.jsx';
 
-const NewHeader = () => {
+const NewHeader = ({navigation}) => {
     return(
         <View style={Styles.container}>
             <View style={Styles.tagContainer}>
                 <Image source={{uri: Data[0].avatarUrl}} style={Styles.avatar} />
                 <Text style={Styles.tag}>${Data[0].lemontag}</Text>
             </View>
-            <TouchableHighlight style={Styles.buttonContainer}>
+            <TouchableHighlight style={Styles.buttonContainer} onPress={() => {
+                navigation.navigate('Home')
+            }}>
                 <View style={Styles.lemonPayContainer}>
                     <Image style={Styles.lemonPayIcon} source={{uri: "https://i.postimg.cc/t4yR13J1/lemon-icon.png"}} />
                     <Text style={Styles.lemonPayButton}>Go back</Text>

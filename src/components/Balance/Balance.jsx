@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Image, Text, View, TouchableHighlight } from 'react-native';
 import Styles from './styles.jsx';
+import { walletContext } from "../../../contexts/Context";
 
-const Balance = ({walletValue}) => {
+const Balance = () => {
+    const { wallet } = useContext(walletContext);
     return (
         <View style={Styles.container}>
             <Text style={Styles.sectionTitle}>Balance total</Text>
@@ -11,7 +13,9 @@ const Balance = ({walletValue}) => {
 
                 {/** Esto muestra la cantidad de dinero que hay en la billetera */}
 
-                {walletValue} 
+                {
+                    wallet.walletValue ? wallet.walletValue.toFixed(2) : 0
+                }
                 <Text style={Styles.badgeText}> ARS</Text> 
             </Text>
             <View style={Styles.buttonsContainer}>

@@ -1,10 +1,9 @@
 import { StyleSheet } from "react-native";
-import Constants from 'expo-constants';
 
 const max_width_tag = '40%';
 const styles = StyleSheet.create({
     container: {
-        marginTop: Constants.statusBarHeight + 25,
+        marginTop: 25,
         marginRight: 14,
         flexDirection: "row",
         alignItems: "center",
