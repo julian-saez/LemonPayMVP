@@ -1,6 +1,5 @@
 # Acerca de este proyecto
-
-https://raw.githubusercontent.com/julian-saez/prototipo-lemon-pay/main/assets/Cobrar-vista.png](https://raw.githubusercontent.com/julian-saez/prototipo-lemon-pay/main/assets/CobrarVista.png
+https://raw.githubusercontent.com/julian-saez/prototipo-lemon-pay/main/assets/CobrarVista.png
 
 Lemon Pay es un prototipo que intenta demostrar visualmente una función para realizar pagos y cobros con criptomonedas. 
 
