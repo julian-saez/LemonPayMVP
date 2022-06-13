@@ -3,6 +3,8 @@ import { walletContext } from "./contexts/Context";
 import AppLoading from './src/components/AppLoading.jsx';
 import Home from './routers/home/Home.jsx';
 import NewHome from './routers/newHome/newHome.jsx';
+import Charge from './routers/lemonpay/charge/Charge.jsx';
+import QRPayment from './routers/lemonpay/qrPayment/QRPayment.jsx';
 import Data from './src/api/data.js';
 
 import { useFonts, Nunito_400Regular, Nunito_500Medium, Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
@@ -58,13 +60,21 @@ export default function App() {
                     headerShown: false,
                   }}
                 >
+                  <Stack.Screen 
+                    name='LemonPay'
+                    component={NewHome}
+                  />
                   <Stack.Screen
                     name="Home"
                     component={Home}
                   />
                   <Stack.Screen 
-                    name='LemonPay'
-                    component={NewHome}
+                    name='ChargeView'
+                    component={Charge}
+                  />
+                  <Stack.Screen 
+                    name='QRPaymentView'
+                    component={QRPayment}
                   />
                 </Stack.Navigator>
             </NavigationContainer>

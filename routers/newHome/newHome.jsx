@@ -1,9 +1,10 @@
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar } from 'react-native';
-import NewBalance from '../../src/components/newBalance/NewBalance';
-import NewHeader from '../../src/components/newHeader/NewHeader';
-import NewMovements from '../../src/components/newMovements/NewMovements';
-import NewOwnCoins from '../../src/components/newOwnCoins/NewOwnCoins';
+import BottomTabBar from '../../src/components/BottomTabBar/BottomTabBar';
+import NewBalance from '../../src/components/newHome/newBalance/NewBalance';
+import NewHeader from '../../src/components/newHome/newHeader/NewHeader';
+import NewMovements from '../../src/components/newHome/newMovements/NewMovements';
+import NewOwnCoins from '../../src/components/newHome/newOwnCoins/NewOwnCoins';
 import Styles from './styles.jsx';
 
 const NewHome = ({navigation}) => {
@@ -16,10 +17,11 @@ const NewHome = ({navigation}) => {
             />
             <ScrollView>
                 <NewHeader navigation={navigation} />
-                <NewBalance />
+                <NewBalance navigation={navigation} />
                 <NewOwnCoins />
                 <NewMovements />
             </ScrollView>
+            <BottomTabBar theme={"dark"} />
         </SafeAreaView>
     )
 }
